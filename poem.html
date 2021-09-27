@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poem</title>
+<link rel="stylesheet" href="poem.css">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Vibur" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div id="header">
+    
+   <img class="navlogo" src="./Images/navlogo.png" alt="Podcasts" >
+    <ul id="unol">
+      <a href="index.html"><li>Home</li></a>
+      <a href="podcast.html"><li>Podcasts</li></a>
+      <a href="blogs.html"><li>Blogs</li></a>
+      <a href="poem.html"><li>Poems</li></a>
+      <a><li>Login</li></a>
+    </ul>
+  </div>
+  <br>
+  <div class="page2">
+    <h1 class="mainhead">POEM</h1>
+  </div>
+
+ <div class="box">
+  
+  <div class="tab">
+  <button class="tablinks" onclick="openpoem(event, 'Poem1')" id="defaultOpen">Day & Night</button>
+  <button class="tablinks" onclick="openpoem(event, 'Poem2')">What If?</button>
+  <button class="tablinks" onclick="openpoem(event, 'Poem3')">Poem3</button>
+</div>
+
+<div id="Poem1" class="tabcontent">
+  <!-- <h3>Day & Night</h3>
+  <p>fxfcfcsccvbdbcdjncjknc</p> -->
+ <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="./Images/Poem1.jpg" style="width:90%">
+      <div class="text">Day and Night</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./Images/Poem2.jpg" style="width:90%">
+      <div class="text">Day and Night</div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="./Images/Poem3.jpg" style="width:90%">
+      <div class="text">Day and Night</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+
+    </div>
+
+<div id="Poem2" class="tabcontent">
+  <h3>What If ?</h3>
+  <p>bjvbhbvhbvfbvfbfbvvb.</p> 
+</div>
+
+<div id="Poem3" class="tabcontent">
+  <h3>Poem3</h3>
+  <p>Hue hue hue!</p>
+</div>
+ </div>
+
+<script>
+function openpoem(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+
+// for carausel
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>  
+
+</body>
+</html>
